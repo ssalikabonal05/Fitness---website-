@@ -111,12 +111,16 @@ input,textarea{
 <body>
 
 <nav>
-<h2>Salika</h2>
-<div>
-<a href="#services">Services</a>
-<a href="#pricing">Pricing</a>
-<a href="#contact">Join</a>
-</div>
+<nav class="navbar">
+  <div class="logo">SALIKA FITNESS</div>
+
+  <div class="menu" id="menu">
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Gallery</a>
+  </div>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
 </nav>
 
 <!-- HERO -->
@@ -169,26 +173,19 @@ input,textarea{
 <a href="https://wa.me/919105375313" class="whatsapp">💬</a>
 
 <script>
-function sendWhatsApp(){
-let name = document.getElementById('name').value;
-let phone = document.getElementById('phone').value;
-let goal = document.getElementById('goal').value;
-
-let msg = `New Client:%0AName: ${name}%0APhone: ${phone}%0AGoal: ${goal}`;
-window.open(`https://wa.me/919105375313?text=${msg}`);
-}
-
-/* SCROLL ANIMATION */
-const items = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', ()=>{
-items.forEach(el=>{
-const top = el.getBoundingClientRect().top;
-if(top < window.innerHeight - 100){
-el.classList.add('show');
-}
+    <script>
+window.addEventListener("scroll", function(){
+  document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
 });
-});
+
+function toggleMenu(){
+  let menu = document.getElementById("menu");
+  if(menu.style.display === "flex"){
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
+}
 </script>
 
 </body>
