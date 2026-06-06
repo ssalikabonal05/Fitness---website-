@@ -1,49 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Salika Bonal Fitness</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      text-align: center;
-      background: url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1') no-repeat center center/cover;
-      color: white;
-    }
+    <title>Salika Bonal Fitness</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #0d0d0d;
+            color: white;
+        }
 
-    h1 {
-      font-size: 50px;
-      margin-top: 100px;
-    }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+            url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
 
-    p {
-      font-size: 20px;
-    }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: orange;
+            font-weight: bold;
+        }
 
-    .btn {
-      display: inline-block;
-      margin: 20px;
-      padding: 15px 25px;
-      background: red;
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 8px;
-    }
+        .hero h1 {
+            font-size: 45px;
+            max-width: 600px;
+        }
 
-    .btn:hover {
-      background: darkred;
-    }
-  </style>
+        .hero span {
+            color: orange;
+        }
+
+        .hero p {
+            max-width: 500px;
+            color: #ccc;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 12px 20px;
+            border: none;
+            background: orange;
+            color: black;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background: #1a1a1a;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+        }
+    </style>
 </head>
 
 <body>
 
-<h1>Salika Bonal 💪</h1>
-<p>Transform Your Body. Build Your Strength.</p>
+<div class="logo">SALIKA BONAL</div>
 
-<a class="btn" href="#">Join Now</a>
-<a class="btn" href="https://wa.me/">Contact on WhatsApp</a>
+<div class="hero">
+    <h1>EXCUSES DON'T <span>BURN CALORIES.</span></h1>
+    <p>Transform your body with expert training and diet plans.</p>
+
+    <!-- WhatsApp Button -->
+    <a class="btn" href="https://wa.me/919105375313" target="_blank">
+        💬 WhatsApp Now
+    </a>
+
+    <!-- Call Button -->
+    <a class="btn" href="tel:9105375313">
+        📞 Call Now
+    </a>
+
+</div>
+
+<div class="section">
+    <h2>🔥 Services</h2>
+    <div class="services">
+        <div class="card">🏋️ Personal Training</div>
+        <div class="card">🥗 Diet Plan</div>
+        <div class="card">🔥 Fat Loss</div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>📞 Contact</h2>
+    <p>Phone: 9105375313</p>
+    <p>City: Bareilly</p>
+</div>
 
 </body>
 </html>
