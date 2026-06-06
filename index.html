@@ -23,7 +23,6 @@ top:0;
 width:100%;
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:15px 25px;
 background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
@@ -31,20 +30,14 @@ z-index:1000;
 }
 
 .logo{
-color:#ff7a00;
+color:#ff4da6;
 font-weight:800;
-letter-spacing:2px;
 }
 
 .menu a{
 color:white;
 margin-left:20px;
 text-decoration:none;
-transition:0.3s;
-}
-
-.menu a:hover{
-color:#ff7a00;
 }
 
 /* HERO */
@@ -54,8 +47,8 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
-url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') center/cover;
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)),
+url('https://images.unsplash.com/photo-1518611012118-f0c5c2d9b1b9') center/cover;
 animation:fadeIn 2s ease;
 }
 
@@ -64,22 +57,33 @@ font-size:50px;
 }
 
 .hero span{
-color:#ff7a00;
+color:#ff4da6;
 }
 
 .btn{
-background:#ff7a00;
+background:#ff4da6;
 padding:12px 25px;
 display:inline-block;
 margin-top:20px;
 text-decoration:none;
 color:white;
-border-radius:5px;
+border-radius:30px;
 transition:0.3s;
 }
 
 .btn:hover{
 transform:scale(1.1);
+}
+
+/* MOTIVATION */
+.motivation{
+padding:60px 20px;
+text-align:center;
+background:linear-gradient(45deg,#ff4da6,#ff7a00);
+}
+
+.motivation h2{
+font-size:28px;
 }
 
 /* SERVICES */
@@ -98,26 +102,48 @@ justify-content:center;
 background:#111;
 margin:15px;
 padding:25px;
-border-radius:10px;
+border-radius:15px;
 width:250px;
 transition:0.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 20px #ff7a00;
+box-shadow:0 0 20px #ff4da6;
+}
+
+/* PRICING */
+.pricing{
+padding:80px 20px;
+text-align:center;
+background:linear-gradient(45deg,#1a1a1a,#000);
+}
+
+.price-card{
+background:#111;
+margin:15px;
+padding:30px;
+border-radius:15px;
+display:inline-block;
+width:250px;
+transition:0.3s;
+}
+
+.price-card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #ff4da6;
 }
 
 /* GALLERY */
 .gallery{
-padding:60px 20px;
+padding:60px;
 text-align:center;
 }
 
 .gallery img{
 width:300px;
 margin:10px;
-border-radius:10px;
+border-radius:15px;
 transition:0.3s;
 }
 
@@ -125,18 +151,17 @@ transition:0.3s;
 transform:scale(1.05);
 }
 
-/* CONTACT */
-.contact{
-padding:60px;
-text-align:center;
-}
-
-.contact input, .contact textarea{
-width:80%;
-padding:10px;
-margin:10px;
-border:none;
-border-radius:5px;
+/* WHATSAPP BUTTON */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+color:white;
+text-decoration:none;
 }
 
 /* FOOTER */
@@ -144,7 +169,6 @@ footer{
 background:#111;
 padding:20px;
 text-align:center;
-margin-top:20px;
 }
 
 /* ANIMATION */
@@ -157,53 +181,67 @@ to{opacity:1;transform:translateY(0);}
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
 <div class="logo">SALIKA FITNESS</div>
 <div class="menu">
 <a href="#">Home</a>
-<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
 <a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
 </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
 <div>
-<h1>NO EXCUSES. <span>ONLY RESULTS.</span></h1>
-<a href="#" class="btn">Start Your Journey</a>
+<h1>STRONG WOMEN <span>CREATE THEMSELVES</span></h1>
+<a href="https://wa.me/91XXXXXXXXXX" class="btn">Join Now</a>
 </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-<h2>Our Services</h2>
+<section class="motivation">
+<h2>💖 Your Body Can Do It. It's Time To Convince Your Mind.</h2>
+</section>
+
+<section class="services">
+<h2>Programs For You</h2>
 <div class="cards">
-<div class="card">💪 Personal Training</div>
-<div class="card">🥗 Diet Plans</div>
-<div class="card">🏋️ Fat Loss Program</div>
+<div class="card">🔥 Fat Loss Program</div>
+<div class="card">💃 Home Workout Plan</div>
+<div class="card">🥗 Diet & Transformation</div>
 </div>
 </section>
 
-<!-- GALLERY -->
+<section class="pricing" id="pricing">
+<h2>Pricing Plans</h2>
+
+<div class="price-card">
+<h3>Basic</h3>
+<p>₹499/month</p>
+<p>Workout Plan</p>
+</div>
+
+<div class="price-card">
+<h3>Pro</h3>
+<p>₹999/month</p>
+<p>Workout + Diet</p>
+</div>
+
+<div class="price-card">
+<h3>Premium</h3>
+<p>₹1999/month</p>
+<p>Full Personal Training</p>
+</div>
+
+</section>
+
 <section class="gallery" id="gallery">
-<h2>Gallery</h2>
+<h2>Transformation Gallery</h2>
 <img src="https://images.unsplash.com/photo-1599058917212-d750089bcf7e">
 <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
 <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61">
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-<h2>Contact Us</h2>
-<input type="text" placeholder="Your Name"><br>
-<input type="email" placeholder="Your Email"><br>
-<textarea placeholder="Your Message"></textarea><br>
-<a href="#" class="btn">Send Message</a>
-</section>
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp">💬</a>
 
-<!-- FOOTER -->
 <footer>
 <p>© 2026 Salika Fitness | All Rights Reserved</p>
 </footer>
