@@ -5,77 +5,191 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Salika Bonal Fitness</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: white;
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0a0a0a;
+    color:white;
 }
 
-/* HERO SECTION */
-.hero {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e') no-repeat center/cover;
-    display: flex;
-    align-items: center;
-    padding: 20px;
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:15px 30px;
+    background:rgba(0,0,0,0.7);
+    z-index:1000;
+}
+nav h2{color:#ff7a00;}
+nav a{color:white;margin-left:15px;text-decoration:none;}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1605296867424-35fc25c9212a');
+    background-size:cover;
+    display:flex;
+    align-items:center;
+    padding:30px;
+}
+.hero h1{font-size:50px;}
+.hero span{color:#ff7a00;}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 30px;
+    background:#ff7a00;
+    color:black;
+    border-radius:30px;
+    text-decoration:none;
 }
 
-.overlay {
-    background: rgba(0,0,0,0.7);
-    padding: 30px;
-    max-width: 500px;
-    border-radius: 10px;
+/* SECTION */
+.section{
+    padding:80px 20px;
+    text-align:center;
 }
 
-h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
+/* CARDS */
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+.card{
+    background:#111;
+    padding:20px;
+    width:250px;
+    border-radius:10px;
 }
 
-h1 span {
-    color: orange;
+/* FORM */
+input,textarea{
+    width:90%;
+    padding:10px;
+    margin:10px;
+    border:none;
+    border-radius:5px;
 }
 
-p {
-    font-size: 14px;
-    margin-bottom: 20px;
+/* WHATSAPP FLOAT */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
 }
 
-/* BUTTON */
-.btn {
-    background: orange;
-    padding: 12px 25px;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    display: inline-block;
+/* ANIMATION */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
-/* MOBILE FIX */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 28px;
-    }
-
-    .overlay {
-        padding: 20px;
-    }
+@media(max-width:600px){
+.hero h1{font-size:30px;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-    <div class="overlay">
-        <h1>EXCUSES DON'T <span>BURN CALORIES</span></h1>
-        <p>Get personalized diet & workout plans from Salika Bonal in Bareilly.</p>
-        <a href="tel:9105375313" class="btn">Start Your Journey</a>
-    </div>
+<nav>
+<h2>Salika</h2>
+<div>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Join</a>
 </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div>
+<h1>GET FIT WITH <span>SALIKA BONAL</span></h1>
+<p>Join 100+ clients transforming their body</p>
+<a href="#contact" class="btn">Join Now</a>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section fade">
+<h2>Services</h2>
+<div class="cards">
+<div class="card">Weight Loss</div>
+<div class="card">Muscle Gain</div>
+<div class="card">Personal Coaching</div>
+</div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section fade">
+<h2>Client Results</h2>
+<p>⭐⭐⭐⭐⭐ "Lost 12kg in 2 months!"</p>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section fade">
+<h2>Plans</h2>
+<div class="cards">
+<div class="card">₹999 / month</div>
+<div class="card">₹1999 / 3 months</div>
+</div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact" class="section fade">
+<h2>Join Now</h2>
+
+<input id="name" placeholder="Your Name"><br>
+<input id="phone" placeholder="Phone Number"><br>
+<textarea id="goal" placeholder="Your Fitness Goal"></textarea><br>
+
+<button class="btn" onclick="sendWhatsApp()">Submit</button>
+
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919105375313" class="whatsapp">💬</a>
+
+<script>
+function sendWhatsApp(){
+let name = document.getElementById('name').value;
+let phone = document.getElementById('phone').value;
+let goal = document.getElementById('goal').value;
+
+let msg = `New Client:%0AName: ${name}%0APhone: ${phone}%0AGoal: ${goal}`;
+window.open(`https://wa.me/919105375313?text=${msg}`);
+}
+
+/* SCROLL ANIMATION */
+const items = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', ()=>{
+items.forEach(el=>{
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+el.classList.add('show');
+}
+});
+});
+</script>
 
 </body>
 </html>
