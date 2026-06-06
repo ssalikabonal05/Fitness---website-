@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salika Bonal Fitness</title>
+<title>Salika Fitness</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
@@ -11,182 +11,202 @@
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#0a0a0a;
-    color:white;
+font-family:'Poppins',sans-serif;
+background:#0a0a0a;
+color:white;
 }
 
-/* NAV */
-nav{
-    position:fixed;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    padding:15px 30px;
-    background:rgba(0,0,0,0.7);
-    z-index:1000;
+/* NAVBAR */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
-nav h2{color:#ff7a00;}
-nav a{color:white;margin-left:15px;text-decoration:none;}
+
+.logo{
+color:#ff7a00;
+font-weight:800;
+letter-spacing:2px;
+}
+
+.menu a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:#ff7a00;
+}
 
 /* HERO */
 .hero{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
-    url('https://images.unsplash.com/photo-1605296867424-35fc25c9212a');
-    background-size:cover;
-    display:flex;
-    align-items:center;
-    padding:30px;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') center/cover;
+animation:fadeIn 2s ease;
 }
-.hero h1{font-size:50px;}
-.hero span{color:#ff7a00;}
+
+.hero h1{
+font-size:50px;
+}
+
+.hero span{
+color:#ff7a00;
+}
 
 .btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 30px;
-    background:#ff7a00;
-    color:black;
-    border-radius:30px;
-    text-decoration:none;
+background:#ff7a00;
+padding:12px 25px;
+display:inline-block;
+margin-top:20px;
+text-decoration:none;
+color:white;
+border-radius:5px;
+transition:0.3s;
 }
 
-/* SECTION */
-.section{
-    padding:80px 20px;
-    text-align:center;
+.btn:hover{
+transform:scale(1.1);
 }
 
-/* CARDS */
+/* SERVICES */
+.services{
+padding:80px 20px;
+text-align:center;
+}
+
 .cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 }
+
 .card{
-    background:#111;
-    padding:20px;
-    width:250px;
-    border-radius:10px;
+background:#111;
+margin:15px;
+padding:25px;
+border-radius:10px;
+width:250px;
+transition:0.3s;
 }
 
-/* FORM */
-input,textarea{
-    width:90%;
-    padding:10px;
-    margin:10px;
-    border:none;
-    border-radius:5px;
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px #ff7a00;
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    padding:15px;
-    border-radius:50%;
+/* GALLERY */
+.gallery{
+padding:60px 20px;
+text-align:center;
+}
+
+.gallery img{
+width:300px;
+margin:10px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* CONTACT */
+.contact{
+padding:60px;
+text-align:center;
+}
+
+.contact input, .contact textarea{
+width:80%;
+padding:10px;
+margin:10px;
+border:none;
+border-radius:5px;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+padding:20px;
+text-align:center;
+margin-top:20px;
 }
 
 /* ANIMATION */
-.fade{
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s;
-}
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-@media(max-width:600px){
-.hero h1{font-size:30px;}
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(50px);}
+to{opacity:1;transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<nav>
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="logo">SALIKA FITNESS</div>
-
-  <div class="menu" id="menu">
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Gallery</a>
-  </div>
-
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+<div class="logo">SALIKA FITNESS</div>
+<div class="menu">
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
 <div>
-<h1>GET FIT WITH <span>SALIKA BONAL</span></h1>
-<p>Join 100+ clients transforming their body</p>
-<a href="#contact" class="btn">Join Now</a>
+<h1>NO EXCUSES. <span>ONLY RESULTS.</span></h1>
+<a href="#" class="btn">Start Your Journey</a>
 </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="section fade">
-<h2>Services</h2>
+<section class="services" id="services">
+<h2>Our Services</h2>
 <div class="cards">
-<div class="card">Weight Loss</div>
-<div class="card">Muscle Gain</div>
-<div class="card">Personal Coaching</div>
+<div class="card">💪 Personal Training</div>
+<div class="card">🥗 Diet Plans</div>
+<div class="card">🏋️ Fat Loss Program</div>
 </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<section class="section fade">
-<h2>Client Results</h2>
-<p>⭐⭐⭐⭐⭐ "Lost 12kg in 2 months!"</p>
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+<h2>Gallery</h2>
+<img src="https://images.unsplash.com/photo-1599058917212-d750089bcf7e">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+<img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61">
 </section>
 
-<!-- PRICING -->
-<section id="pricing" class="section fade">
-<h2>Plans</h2>
-<div class="cards">
-<div class="card">₹999 / month</div>
-<div class="card">₹1999 / 3 months</div>
-</div>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<h2>Contact Us</h2>
+<input type="text" placeholder="Your Name"><br>
+<input type="email" placeholder="Your Email"><br>
+<textarea placeholder="Your Message"></textarea><br>
+<a href="#" class="btn">Send Message</a>
 </section>
 
-<!-- CONTACT FORM -->
-<section id="contact" class="section fade">
-<h2>Join Now</h2>
-
-<input id="name" placeholder="Your Name"><br>
-<input id="phone" placeholder="Phone Number"><br>
-<textarea id="goal" placeholder="Your Fitness Goal"></textarea><br>
-
-<button class="btn" onclick="sendWhatsApp()">Submit</button>
-
-</section>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/919105375313" class="whatsapp">💬</a>
-
-<script>
-    <script>
-window.addEventListener("scroll", function(){
-  document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
-});
-
-function toggleMenu(){
-  let menu = document.getElementById("menu");
-  if(menu.style.display === "flex"){
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "flex";
-  }
-}
-</script>
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Salika Fitness | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
